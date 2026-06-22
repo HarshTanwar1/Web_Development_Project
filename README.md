@@ -4,7 +4,7 @@
 
 A full-featured admin panel built with Django & AdminLTE 3
 
-_Custom authentication · Role-based access control · A dynamic no-code CRUD generator_
+Custom authentication · Role-based access control · A dynamic no-code CRUD generator
 
 <br>
 
@@ -32,7 +32,7 @@ create, edit, and manage SQLite tables directly from the browser — no code req
 
 ## ✨ Key Highlights
 
-|                                  |                                                                         |
+| Functionality                    | Methodology                                                             |
 | -------------------------------- | ----------------------------------------------------------------------- |
 | 🔐 **Custom Auth System**        | Email-verified sign-up, secure one-time tokens, password reset & change |
 | 👥 **Role-Based Access Control** | Per-module permissions assignable to custom roles                       |
@@ -40,6 +40,19 @@ create, edit, and manage SQLite tables directly from the browser — no code req
 | 📧 **Async Email Delivery**      | SMTP email sent on a background thread for fast responses               |
 | 🎨 **Polished UI**               | AdminLTE 3 dashboards, widgets, calendar & gallery                      |
 | 📊 **Audit & Export**            | Activity logging and one-click database export to CSV                   |
+
+<br>
+
+## 🧰 Tech Stack
+
+| Layer        | Technologies                                                                  |
+| ------------ | ----------------------------------------------------------------------------- |
+| **Backend**  | Python 3.9, Django 3.2 (MVT architecture)                                     |
+| **Frontend** | AdminLTE 3, Bootstrap, HTML, CSS, JavaScript, Django Template Language        |
+| **Database** | SQLite 3 (via the ORM **and** direct `sqlite3` access for the CRUD generator) |
+| **Data**     | pandas (CSV import/export & database export)                                  |
+| **Email**    | SMTP (Gmail) with Python `threading` for non-blocking delivery                |
+| **Auth**     | Django custom user model, `PasswordResetTokenGenerator`, `six`                |
 
 <br>
 
@@ -95,19 +108,6 @@ create, edit, and manage SQLite tables directly from the browser — no code req
 
 <br>
 
-## 🧰 Tech Stack
-
-| Layer        | Technologies                                                                  |
-| ------------ | ----------------------------------------------------------------------------- |
-| **Backend**  | Python 3.9, Django 3.2 (MVT architecture)                                     |
-| **Frontend** | AdminLTE 3, Bootstrap, HTML, CSS, JavaScript, Django Template Language        |
-| **Database** | SQLite 3 (via the ORM **and** direct `sqlite3` access for the CRUD generator) |
-| **Data**     | pandas (CSV import/export & database export)                                  |
-| **Email**    | SMTP (Gmail) with Python `threading` for non-blocking delivery                |
-| **Auth**     | Django custom user model, `PasswordResetTokenGenerator`, `six`                |
-
-<br>
-
 ## ⚡ Getting Started
 
 ### 1. Clone & enter the project
@@ -137,7 +137,7 @@ pip install "Django==3.2" django-adminlte3 pandas six
 
 ### 4. Configure secrets (recommended)
 
-In `Internship_Project/Internship_Project/settings.py`, replace the `SECRET_KEY` and the
+In [`Internship_Project/Internship_Project/settings.py`](Internship_Project/Internship_Project/settings.py), replace the `SECRET_KEY` and the
 `EMAIL_HOST_USER` / `EMAIL_HOST_PASSWORD` values with your own (ideally from environment
 variables). Email features (activation, password reset) need valid SMTP credentials.
 
@@ -151,27 +151,6 @@ python manage.py runserver
 ```
 
 🎉 Open **http://127.0.0.1:8000/** to reach the login page.
-
-<br>
-
-## 🗂️ Project Structure
-
-```
-Web_Development_Project/
-└── Internship_Project/
-    ├── manage.py
-    ├── db.sqlite3                 # default database
-    ├── Internship_Project/        # project config (settings, urls, wsgi, asgi)
-    └── admin_dashboard/           # main app
-        ├── models.py              # MyUser, Module, settings models
-        ├── views.py               # auth, CRUD generator, settings, roles, logs
-        ├── urls.py                # all route definitions
-        ├── utils.py               # custom email-verification token generator
-        ├── templatetags/          # custom template tags
-        ├── migrations/
-        ├── templates/             # HTML templates (auth, dashboard, settings, CRUD…)
-        └── static/                # CSS, images, AdminLTE assets
-```
 
 <br>
 
