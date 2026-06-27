@@ -115,7 +115,7 @@ git clone https://github.com/HarshTanwar1/Web_Development_Project.git
 cd Web_Development_Project
 ```
 
-### 2. Create and activate a virtual environment
+### 2. Create and activate a virtual environment _(recommended)_
 
 ```bash
 # macOS / Linux
@@ -133,7 +133,7 @@ python -m venv venv
 pip install "Django==3.2" django-adminlte3 pandas six
 ```
 
-### 4. Configure secrets (recommended)
+### 4. Configure secrets _(recommended)_
 
 In [`Internship_Project/Internship_Project/settings.py`](Internship_Project/Internship_Project/settings.py), replace the `SECRET_KEY` and the
 `EMAIL_HOST_USER` / `EMAIL_HOST_PASSWORD` values with your own (ideally from environment
