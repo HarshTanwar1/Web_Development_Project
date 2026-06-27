@@ -32,14 +32,12 @@ create, edit, and manage SQLite tables directly from the browser — no code req
 
 ## ✨ Key Highlights
 
-| Functionality                    | Methodology                                                             |
-| -------------------------------- | ----------------------------------------------------------------------- |
-| 🔐 **Custom Auth System**        | Email-verified sign-up, secure one-time tokens, password reset & change |
-| 👥 **Role-Based Access Control** | Per-module permissions assignable to custom roles                       |
-| ⚙️ **No-Code CRUD Generator**    | Create/drop tables & manage records straight from the UI                |
-| 📧 **Async Email Delivery**      | SMTP email sent on a background thread for fast responses               |
-| 🎨 **Polished UI**               | AdminLTE 3 dashboards, widgets, calendar & gallery                      |
-| 📊 **Audit & Export**            | Activity logging and one-click database export to CSV                   |
+- 🔐 **Custom Auth System** — email-verified sign-up, secure one-time tokens, password reset & change.
+- 👥 **Role-Based Access Control** — per-module permissions assignable to custom roles.
+- ⚙️ **No-Code CRUD Generator** — create/drop tables & manage records straight from the UI.
+- 📧 **Async Email Delivery** — SMTP email sent on a background thread for fast responses.
+- 🎨 **Polished UI** — AdminLTE 3 dashboards, widgets, calendar & gallery.
+- 📊 **Audit & Export** — activity logging and one-click database export to CSV.
 
 <br>
 
@@ -56,53 +54,53 @@ create, edit, and manage SQLite tables directly from the browser — no code req
 
 <br>
 
-## 🚀 Features & Functionalities
+## 🚀 Features & Functionality
 
 <details open>
 <summary><strong>🔐 Authentication & Accounts</strong></summary>
 
-- **Custom user model** (`MyUser`) via `AbstractBaseUser` + `PermissionsMixin` with email, username, role & status
-- **Registration with email verification** — activation link using a base64 UID + signed token
-- **Login / logout** with session handling and a custom password validator
-- **Password reset** by email and **change password** for logged-in users
-- **Superuser / Super Admin** roles with elevated restrictions
+- **Custom user model** (`MyUser`) via `AbstractBaseUser` + `PermissionsMixin` with email, username, role & status.
+- **Registration with email verification** — activation link using a base64 UID + signed token.
+- **Login / logout** with session handling and a custom password validator.
+- **Password reset** by email and **change password** for logged-in users.
+- **Superuser / Super Admin** roles with elevated restrictions.
 
 </details>
 
 <details>
 <summary><strong>👥 Admin & Role Management</strong></summary>
 
-- Add, edit, delete and **filter** admin users
-- Create, edit and delete **roles**, assigning per-module access (profile, admin, roles, log, settings, CRUD, status, export)
-- **Module-level access control** so each role only sees what it's allowed to
+- Add, edit, delete and **filter** admin users.
+- Create, edit and delete **roles**, assigning per-module access (profile, admin, roles, log, settings, CRUD, status, export).
+- **Module-level access control** so each role only sees what it's allowed to.
 
 </details>
 
 <details>
 <summary><strong>⚙️ Dynamic CRUD Generator</strong></summary>
 
-- **Create and drop** SQLite tables from the web interface
-- **Insert, edit and delete** records — single row, all rows, or the whole table
-- **Live editing** of table structure with changes saved back to the database
+- **Create and drop** SQLite tables from the web interface.
+- **Insert, edit and delete** records — single row, all rows, or the whole table.
+- **Live editing** of table structure with changes saved back to the database.
 
 </details>
 
 <details>
 <summary><strong>🛠️ Configurable Settings</strong></summary>
 
-- **General** — application name, logo, favicon, timezone & default language
-- **Email (SMTP)** — sender, host, port, user & password
-- **Google reCAPTCHA** — site key, secret key & language
+- **General** — application name, logo, favicon, timezone & default language.
+- **Email (SMTP)** — sender, host, port, user & password.
+- **Google reCAPTCHA** — site key, secret key & language.
 
 </details>
 
 <details>
 <summary><strong>📊 Dashboards & Utilities</strong></summary>
 
-- Three **dashboard layouts** showcasing AdminLTE widgets
-- **Activity log** with CSV export
-- **Database export** to CSV
-- Calendar, gallery & widget pages
+- Three **dashboard layouts** showcasing AdminLTE widgets.
+- **Activity log** with CSV export.
+- **Database export** to CSV.
+- Calendar, gallery & widget pages.
 
 </details>
 
@@ -156,25 +154,25 @@ python manage.py runserver
 
 ## 🎓 What I Learned
 
-- **Django fundamentals** — the MVT pattern, URL routing, views and the template language
-- **Custom authentication** — building a custom user model & manager and wiring up `AUTH_USER_MODEL`
-- **Secure tokens** — subclassing `PasswordResetTokenGenerator` and encoding/decoding IDs with `urlsafe_base64`
-- **Email in Django** — SMTP backends, HTML emails via `render_to_string`, and sending on a **background thread**
-- **The ORM & migrations** — designing models and evolving the schema safely
-- **Direct database work** — combining the `sqlite3` module and `pandas` to build a dynamic CRUD tool
-- **Role-based access control** — modeling permissions and gating features per role
-- **File uploads, static/media handling**, and integrating a **third-party theme** into Django
+- **Django fundamentals** — the MVT pattern, URL routing, views and the template language.
+- **Custom authentication** — building a custom user model & manager and wiring up `AUTH_USER_MODEL`.
+- **Secure tokens** — subclassing `PasswordResetTokenGenerator` and encoding/decoding IDs with `urlsafe_base64`.
+- **Email in Django** — SMTP backends, HTML emails via `render_to_string`, and sending on a **background thread**.
+- **The ORM & migrations** — designing models and evolving the schema safely.
+- **Direct database work** — combining the `sqlite3` module and `pandas` to build a dynamic CRUD tool.
+- **Role-based access control** — modeling permissions and gating features per role.
+- **File uploads, static/media handling**, and integrating a **third-party theme** into Django.
 
 <br>
 
 ## 🔮 Future Improvements
 
-- 🔒 **Security hardening (top priority):** move `SECRET_KEY`, Gmail credentials and `DEBUG` out of `settings.py` into **environment variables**, rotate the exposed credentials, set `DEBUG = False` and configure `ALLOWED_HOSTS`
-- 🧱 Implement real `has_perm` / `has_module_perms` checks (currently always `True`)
-- 💉 Use **parameterized queries** and validate table/column names in the CRUD generator to prevent SQL injection
-- 🐘 Switch to a **production database** (PostgreSQL/MySQL) for multi-user use
-- ♻️ Refactor the ~1,280-line `views.py` into smaller modules / class-based views with consistent decorators
-- 🧹 Remove committed artifacts (`__pycache__`, the SQLite DB, generated CSVs) and add a proper `.gitignore`
+- 🔒 **Security hardening (top priority):** move `SECRET_KEY`, Gmail credentials and `DEBUG` out of `settings.py` into **environment variables**, rotate the exposed credentials, set `DEBUG = False` and configure `ALLOWED_HOSTS`.
+- 🧱 Implement real `has_perm` / `has_module_perms` checks (currently always `True`).
+- 💉 Use **parameterized queries** and validate table/column names in the CRUD generator to prevent SQL injection.
+- 🐘 Switch to a **production database** (PostgreSQL/MySQL) for multi-user use.
+- ♻️ Refactor the ~1,280-line `views.py` into smaller modules / class-based views with consistent decorators.
+- 🧹 Remove committed artifacts (`__pycache__`, the SQLite DB, generated CSVs) and add a proper `.gitignore`.
 
 <br>
 
