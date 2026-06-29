@@ -25,7 +25,7 @@ theme. Beyond standard CRUD, it ships a **custom user model**, **email-verified 
 **role-based module permissions**, and a **dynamic CRUD generator** that lets administrators
 create, edit, and manage SQLite tables directly from the browser — no code required.
 
-> Built end-to-end during an internship to master Django: authentication, the ORM, templating,
+> Built end-to-end to master Django: authentication, the ORM, templating,
 > transactional email, and dynamic database operations
 
 <br>
@@ -157,17 +157,17 @@ python manage.py runserver
 - **Django fundamentals** — the MVT pattern, URL routing, views and the template language.
 - **Custom authentication** — building a custom user model & manager and wiring up `AUTH_USER_MODEL`.
 - **Secure tokens** — subclassing `PasswordResetTokenGenerator` and encoding/decoding IDs with `urlsafe_base64`.
-- **Email in Django** — SMTP backends, HTML emails via `render_to_string`, and sending on a **background thread**.
+- **Email in Django** — SMTP backends, HTML emails via `render_to_string`, and sending on a background thread.
 - **The ORM & migrations** — designing models and evolving the schema safely.
 - **Direct database work** — combining the `sqlite3` module and `pandas` to build a dynamic CRUD tool.
 - **Role-based access control** — modeling permissions and gating features per role.
-- **File uploads, static/media handling**, and integrating a **third-party theme** into Django.
+- **File uploads, static/media handling**, and integrating a third-party theme into Django.
 
 <br>
 
 ## 🔮 Future Improvements
 
-- 🔒 **Security hardening (top priority):** move `SECRET_KEY`, Gmail credentials and `DEBUG` out of `settings.py` into **environment variables**, rotate the exposed credentials, set `DEBUG = False` and configure `ALLOWED_HOSTS`.
+- 🔒 **Security hardening:** move `SECRET_KEY`, Gmail credentials and `DEBUG` out of `settings.py` into **environment variables**, rotate the exposed credentials, set `DEBUG = False` and configure `ALLOWED_HOSTS`.
 - 🧱 Implement real `has_perm` / `has_module_perms` checks (currently always `True`).
 - 💉 Use **parameterized queries** and validate table/column names in the CRUD generator to prevent SQL injection.
 - 🐘 Switch to a **production database** (PostgreSQL/MySQL) for multi-user use.
